@@ -1,6 +1,6 @@
-# (En) OpenTrack receive position and rotation
+п»ї# (En) OpenTrack receive position and rotation
 Implementation for read output interface of OpenTrack on WinSock and C.<br>
 Receive - (x, y, z, yaw, pitch, roll) from UDP. 
-# (Ru) OpenTrack получение позиции и вращения
-Реализация чтения выходного интерфейса OpenTrack на WinSock и C.<br>
-Получение - (x, y, z, yaw, pitch, roll) из UDP. 
+# (Ru) OpenTrack РїРѕР»СѓС‡РµРЅРёРµ РїРѕР·РёС†РёРё Рё РІСЂР°С‰РµРЅРёСЏ
+Р РµР°Р»РёР·Р°С†РёСЏ С‡С‚РµРЅРёСЏ РІС‹С…РѕРґРЅРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР° OpenTrack РЅР° WinSock Рё C.<br>
+РџРѕР»СѓС‡РµРЅРёРµ - (x, y, z, yaw, pitch, roll) РёР· UDP. 
