@@ -44,9 +44,7 @@ int main()
 
 	int bytes_read = 0;
 
-	while (1)
-	{
-		struct TOpenTrackPacket {
+	struct TOpenTrack {
 			double x;
 			double y;
 			double z;
@@ -56,15 +54,19 @@ int main()
 		};
 
 		
-		TOpenTrackPacket OpenTrackPacket;
+	TOpenTrack OpenTrack;
 
-		memset(&OpenTrackPacket, 0, sizeof(OpenTrackPacket));
+	memset(&OpenTrack, 0, sizeof(OpenTrack));
 
-		bytes_read = recvfrom(socketS, (char*)(&OpenTrackPacket), sizeof(OpenTrackPacket), 0, (sockaddr*)&from, &fromlen);
+	while (true)
+	{
+
+		bytes_read = recvfrom(socketS, (char*)(&OpenTrack), sizeof(OpenTrack), 0, (sockaddr*)&from, &fromlen);
 	
 		if (bytes_read > 0) 
-			//printf("Received message from %s\n", inet_ntoa(from.sin_addr));
-			printf("%f %f %f\n", OpenTrackPacket.yaw, OpenTrackPacket.pitch, OpenTrackPacket.roll);
+			printf("%f %f %f\n", OpenTrack.yaw, OpenTrack.pitch, OpenTrack.roll);
+			
+		if ((GetAsyncKeyState(VK_ESCAPE) & 0x8000) != 0) break;
 		
 	}
 
